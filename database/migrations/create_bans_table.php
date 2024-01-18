@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create(config('ban.table'), function (Blueprint $table) {
-            $table->id();
-            $table->nullableMorphs('bannable');
-            $table->nullableMorphs('created_by');
+            $table->uuid('id')->primary()->index();
+            $table->nullableUuidMorphs('bannable');
+            $table->nullableUuidMorphs('created_by');
             $table->text('comment')->nullable();
             $table->string('ip', 45)->nullable();
             $table->timestamp('expired_at')->nullable();
