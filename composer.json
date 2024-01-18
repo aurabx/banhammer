@@ -1,5 +1,5 @@
 {
-    "name": "mchev/banhammer",
+    "name": "aurabx/banhammer",
     "description": "Banhammer for Laravel allows you to ban any Model by key and by IP.",
     "keywords": [
         "mchev",
