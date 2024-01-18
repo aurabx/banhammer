@@ -13,6 +13,7 @@ use Illuminate\Support\Arr;
 class Ban extends Model
 {
     use SoftDeletes;
+    use HasUUIDs;
 
     protected $fillable = [
         'created_by_type',
