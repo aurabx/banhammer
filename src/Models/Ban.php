@@ -87,9 +87,9 @@ class Ban extends Model
     /**
      * Get the value of meta with the given name.
      *
-     * @param  mixed  $default
+     * @param  mixed|null  $default
      */
-    public function getMeta(string $propertyName, $default = null): mixed
+    public function getMeta(string $propertyName, mixed $default = null): mixed
     {
         return Arr::get($this->metas, $propertyName, $default);
     }
@@ -97,10 +97,11 @@ class Ban extends Model
     /**
      * Set the value of meta with the given name.
      *
+     * @param  string  $name
      * @param  mixed  $value
      * @return $this
      */
-    public function setMeta(string $name, $value): self
+    public function setMeta(string $name, mixed $value): self
     {
         $meta = $this->metas;
         Arr::set($meta, $name, $value);
@@ -112,7 +113,7 @@ class Ban extends Model
     /**
      * Forget the value of meta with the given name.
      *
-     * @param  mixed  $value
+     * @param  string  $name
      * @return $this
      */
     public function forgetMeta(string $name): self
