@@ -15,7 +15,7 @@ class IPBanned
         try {
             $bannedIPs = IP::getBannedIPsFromCache();
 
-            if ($request->ip() && in_array($request->ip(), $bannedIPs)) {
+            if ($request->ip() && in_array($request->ip(), $bannedIPs, true)) {
                 throw new BanhammerException(config('ban.messages.ip'));
             }
         } catch (\Exception $e) {

@@ -11,8 +11,8 @@ class LogoutBanned
 {
     public function handle($request, Closure $next): Response
     {
-        if ($request->user() && $request->user()->isBanned()
-            || $request->ip() && in_array($request->ip(), IP::getBannedIPsFromCache())) {
+        if (($request->user() && $request->user()->isBanned())
+            || ($request->ip() && in_array($request->ip(), IP::getBannedIPsFromCache(), true))) {
             if ($request->user()) {
                 auth()->logout();
                 $request->session()->invalidate();
