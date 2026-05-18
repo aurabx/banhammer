@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.4"
     },
     "require-dev": {
         "orchestra/testbench": "^7.0|^8.0",
