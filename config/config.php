@@ -81,4 +81,20 @@ return [
     */
     'cache_duration' => 120, // Duration in minutes
 
+    /*
+    |--------------------------------------------------------------------------
+    | IP-API Endpoint Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The free ip-api.com endpoint only accepts plain HTTP; HTTPS is a paid
+    | ("pro") feature. Set BANHAMMER_IP_API_KEY to a membership key from
+    | https://members.ip-api.com/ to use https://pro.ip-api.com with the key
+    | attached. When unset, the middleware falls back to the free HTTP
+    | endpoint.
+    |
+    */
+    'ip_api' => [
+        'key' => env('BANHAMMER_IP_API_KEY'),
+    ],
+
 ];
